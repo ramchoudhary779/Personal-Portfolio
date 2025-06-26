@@ -1,14 +1,23 @@
+import {BrowserRouter} from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import SkillsSection from './components/SkillSection';
 
-import './App.css'
-import Navbar from './pages/TopNav'
 
 function App() {
 
   return (
-    <>
-      <Navbar />
-      <div className="text-3xl">Hello</div>
-    </>
+    <BrowserRouter>
+     <div className="w-full h-screen bg-gray-600">
+       <div>
+             <Navbar />
+             <Hero />
+             <About />
+       </div>
+     </div>
+   
+    </BrowserRouter>
   )
 }
 
