@@ -2,7 +2,10 @@ import {BrowserRouter} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import SkillsSection from './components/SkillSection';
+import Experience from './components/Experience';
+import ContactForm from './components/Contact';
+import Projects from './components/Projects';
+
 
 
 function App() {
@@ -14,6 +17,9 @@ function App() {
              <Navbar />
              <Hero />
              <About />
+             <Experience />
+             <Projects />
+             <ContactForm />
        </div>
      </div>
    

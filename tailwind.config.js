@@ -4,7 +4,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   theme: {
     extend: {
-      // your custom theme if any
+       animation: {
+    'spin-slow': 'spin 8s linear infinite',
+  },
     },
   },
   plugins: [],

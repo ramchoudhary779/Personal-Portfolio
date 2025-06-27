@@ -1,7 +1,9 @@
+
+
 // Hover Effect – scale + slight rotation
 export const hoverEffect = {
   scale: 1.05,
-  rotate: 2,
+  boxShadow: "0 10px 25px rgba(255, 251, 235, 1)",
   transition: {
     type: "spring",
     stiffness: 300,

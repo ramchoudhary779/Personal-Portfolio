@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SkillsSection from "./SkillSection";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { hoverEffect } from "../utils/motion";
 
 const About = () => {
-  const [showSkills, setShowSkills] = useState(false);
+  const [showSkills, setShowSkills] = useState(true);
+  const skillsRef = useRef(null);
+
+  const handleToggleSkills = () => {
+    setShowSkills((prev) => !prev);
+    setTimeout(() => {
+      if (skillsRef.current) {
+        skillsRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100); // small delay to wait for render
+  };
 
   return (
     <section
@@ -13,12 +24,8 @@ const About = () => {
     >
       {/* About Card */}
       <motion.div
-        className="bg-[#1a1a1a] rounded-xl shadow-xl p-6 md:p-12 max-w-4xl w-full"
-        whileHover={{
-          scale: 1.02,
-          rotateZ: [0, -1.5, 1.5, -1, 1, 0],
-          boxShadow: "0px 10px 25px rgba(0,0,0,0.6)",
-        }}
+        className="	bg-[#1f1f1f] rounded-xl shadow-xl p-6 md:p-12 max-w-4xl w-full "
+        whileHover={hoverEffect}
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -48,10 +55,9 @@ const About = () => {
         </p>
       </motion.div>
 
-      {/* Toggle Arrow Button */}
-      {/* Toggle Arrow Button with Label */}
+      {/* Toggle Skills Button */}
       <motion.button
-        onClick={() => setShowSkills((prev) => !prev)}
+        onClick={handleToggleSkills}
         className="mt-6 text-blue-400 hover:text-blue-500 flex flex-col items-center"
         whileHover={{ scale: 1.05 }}
       >
@@ -69,13 +75,22 @@ const About = () => {
       <AnimatePresence>
         {showSkills && (
           <motion.div
+            ref={skillsRef}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.6 }}
-            className="mt-12 w-full flex justify-center"
+            className="mt-12 w-full flex flex-col items-center"
           >
             <SkillsSection />
+
+            {/* Arrow to experience section */}
+            <a
+              href="#experience"
+              className="mt-8 text-blue-400 hover:text-blue-500 animate-bounce"
+            >
+              <ChevronDown size={32} />
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
