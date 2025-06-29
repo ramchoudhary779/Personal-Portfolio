@@ -11,7 +11,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="relative py-16 px-6 bg-black text-white">
-      <h2 className="text-4xl font-bold text-center mb-12">My Projects</h2>
+      <h2 className="text-4xl font-bold text-center mb-12  text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">My Projects</h2>
       <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <motion.div
@@ -24,7 +24,7 @@ const Projects = () => {
             variants={fadeIn("up", "spring", 0.2, 0.6)}
             whileHover={hoverEffect}
           >
-            <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+            <h3 className="text-2xl font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-green-500">{project.title}</h3>
             <p className="text-gray-300 mb-4">{project.description}</p>
             <button
               onClick={() => setModalData(project)}

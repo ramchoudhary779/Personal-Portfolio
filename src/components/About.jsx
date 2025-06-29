@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SkillsSection from "./SkillSection";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { hoverEffect } from "../utils/motion";
+import { TypeAnimation } from "react-type-animation";
 
 const About = () => {
   const [showSkills, setShowSkills] = useState(true);
@@ -32,8 +33,15 @@ const About = () => {
         transition={{ duration: 0.6 }}
       >
         <h2 className="text-4xl font-bold mb-6 text-center border-b border-gray-700 pb-4">
-          About Me
+          <TypeAnimation
+            sequence={["About Me", 2000, "", 1000]}
+            wrapper="span"
+            speed={30}
+            repeat={Infinity}
+            className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500"
+          />
         </h2>
+
         <p className="text-lg leading-relaxed text-gray-300">
           I’m{" "}
           <span className="text-blue-400 font-semibold">

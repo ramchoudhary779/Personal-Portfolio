@@ -30,7 +30,7 @@ const SkillsSection = () => {
           variants={fadeIn("up", "spring", 0.2, 0.6)}
           whileHover={hoverEffect}
         >
-          <h3 className="text-2xl font-semibold text-blue-400 mb-6 text-center">
+          <h3 className="text-2xl font-semibold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-green-500">
             {card.title}
           </h3>
 

@@ -16,11 +16,11 @@ const Hero = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 shadow:md">
-          Hi, I am <span className="text-blue-500">Ramchandra Choudhary</span>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 shadow:md text-transparent bg-clip-text bg-gradient-to-r from-zinc-300 to-white-800">
+          Hi, I am <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">Ramchandra Choudhary</span>
         </h1>
 
-        <div className="text-3xl md:text-4xl font-medium text-yellow-300 shadow:md">
+        <div className="text-3xl md:text-4xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-yellow-500 shadow:md">
           <TypeAnimation
             sequence={["MERN Stack Developer", 2000, "Freelancer", 2000]}
             wrapper="span"

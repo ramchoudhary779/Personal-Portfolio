@@ -44,7 +44,7 @@ const Contact = () => {
       id="contact"
       className="bg-black text-white py-20 px-4 md:px-12 flex flex-col items-center"
     >
-      <h2 className="text-4xl font-bold text-center mb-12">Get in Touch</h2>
+      <h2 className="text-4xl font-bold text-center mb-12  text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500">Get in Touch</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl w-full items-stretch">
         {/* Email Form Card */}
